@@ -1,0 +1,29 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>検索結果</title>
+  <style>
+    body { max-width: 720px; margin: 24px auto; font-family: system-ui, sans-serif; }
+    a { color: #00f; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>検索結果：「<%= keyword %>」</h1>
+  <a href="/">← マイページに戻る</a>
+  <hr />
+  <% if (blogs.length === 0) { %>
+    <p>該当する記事がありません。</p>
+  <% } else { %>
+    <% blogs.forEach(blog => { %>
+      <div>
+        <h2><%= blog.title %></h2>
+        <small><%= blog.date.toISOString().slice(0,10) %></small>
+        <p><%= blog.content %></p>
+        <hr />
+      </div>
+    <% }) %>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# node modules
+node_modules/
+
+# environment variables
+.env
+
+# Prisma generated client
+/generated/
+
+# OS & Editor files
+.DS_Store
